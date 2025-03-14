@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background: linear-gradient(135deg, #FF6B6B, #4ECDC4);
+    min-height: 100vh;
+  }
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.calc-btn {
+  @apply relative overflow-hidden transition-all duration-300 active:scale-95;
+}
+
+.calc-btn::before {
+  content: '';
+  @apply absolute inset-0 bg-white opacity-0 transition-opacity duration-300;
+}
+
+.calc-btn:hover::before {
+  @apply opacity-10;
+}
+
+.display-glow {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
